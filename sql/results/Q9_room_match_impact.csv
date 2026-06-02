@@ -1,0 +1,3 @@
+room_match_status,total_bookings,total_cancellations,cancellation_rate_pct,avg_daily_rate
+Room Matched,104473,43422,41.56,104.47
+Room Changed,14917,802,5.38,83.36

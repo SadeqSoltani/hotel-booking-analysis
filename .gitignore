@@ -1,0 +1,6 @@
+data/hotel_bookings.csv
+data/hotel_bookings.db
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.env

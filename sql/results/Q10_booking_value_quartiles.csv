@@ -1,0 +1,5 @@
+booking_tier,total_bookings,total_cancellations,cancellation_rate_pct,avg_daily_rate,avg_nights,avg_revenue
+Q1 - Low Value,29358,10188,34.7,72.94,1.5,97.52
+Q2 - Mid-Low Value,29358,11263,38.36,93.51,2.6,212.2
+Q3 - Mid-High Value,29357,11290,38.46,105.61,3.7,348.65
+Q4 - High Value,29357,11270,38.39,142.07,6.1,796.93

@@ -1,0 +1,7 @@
+lead_time_bucket,total_bookings,total_cancellations,cancellation_rate_pct,avg_daily_rate
+6. 180+ days,24692,14077,57.01,93.0
+5. 91-180 days,26439,11821,44.71,109.13
+4. 31-90 days,29553,11141,37.7,106.57
+3. 8-30 days,18960,5283,27.86,108.12
+2. 1-7 days,13401,1472,10.98,93.15
+1. Same day,6345,430,6.78,83.25
