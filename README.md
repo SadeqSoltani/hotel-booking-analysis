@@ -1,9 +1,10 @@
+<img width="1800" height="380" alt="dataset-cover" src="https://github.com/user-attachments/assets/0a27cca2-1aa1-409b-83c9-8d553174764c" />
+
 # Hotel Booking Demand Analysis
 
 > A complete end-to-end data analytics project analyzing 119,390 hotel bookings to uncover the drivers of cancellation, quantify $16.9M in revenue leakage, and deploy a machine learning model that predicts cancellation risk with 95.29% ROC-AUC.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-ROC--AUC%2095.29%25-FF6600?style=flat)](https://xgboost.readthedocs.io/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Live%20App-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://hotel-booking-cancellation-risk-predictor.streamlit.app)
 [![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=flat&logo=powerbi&logoColor=black)]()
 [![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=flat&logo=sqlite&logoColor=white)]()
@@ -30,17 +31,17 @@
 
 ## Project Overview
 
-Hotel cancellations are one of the most damaging and preventable sources of revenue loss in the hospitality industry. This project performs a full-stack data analysis of **119,390 bookings** across two Portuguese hotels — a City Hotel and a Resort Hotel — spanning July 2015 to August 2017.
+Hotel cancellations are one of the most damaging and preventable sources of revenue loss in the hospitality industry. This project performs a full-stack data analysis of **119,390 bookings** across two Portuguese hotels, a City Hotel and a Resort Hotel spanning July 2015 to August 2017.
 
 The project moves through five analytical layers:
 
-- **SQL** — 10 structured business questions answered against a normalized SQLite database
-- **ETL & Data Engineering** — raw CSV transformed into a clean 46-column analytical dataset
-- **Exploratory Analysis** — statistical profiling, distribution analysis, and correlation mapping
-- **Business Intelligence** — deep-dive analysis across booking timeline, hotel performance, market segments, pricing, geography, and cancellation drivers
-- **Machine Learning** — XGBoost cancellation predictor deployed as an interactive Streamlit web application
+- **SQL** : 10 structured business questions answered against a normalized SQLite database
+- **ETL & Data Engineering** : raw CSV transformed into a clean 46-column analytical dataset
+- **Exploratory Analysis** : statistical profiling, distribution analysis, and correlation mapping
+- **Business Intelligence** : deep-dive analysis across booking timeline, hotel performance, market segments, pricing, geography, and cancellation drivers
+- **Machine Learning** : XGBoost cancellation predictor deployed as an interactive Streamlit web application
 
-The Power BI dashboard serves as the stakeholder communication layer — translating all findings from SQL and Python into an interactive 6-page visual story for hotel management.
+The Power BI dashboard serves as the stakeholder communication layer, translating all findings from SQL and Python into an interactive 6-page visual story for hotel management.
 
 ---
 
@@ -76,7 +77,7 @@ Enter booking details and receive an instant cancellation probability score powe
 ```
 Hotel_Booking/
 │
-├── screenshots/                        # Power BI dashboard screenshots
+├── screenshots/                        
 │   ├── 01_executive_summary.png
 │   ├── 02_booking_timeline.png
 │   ├── 03_hotel_segment.png
@@ -85,31 +86,31 @@ Hotel_Booking/
 │   └── 06_geographic_analysis.png
 │
 ├── data/
-│   ├── hotel_bookings.csv              # Raw dataset (119,390 rows, 32 columns)
-│   ├── hotel_bookings.db               # Normalized SQLite database (3 tables)
-│   └── hotel_bookings_clean.csv        # Engineered dataset (46 columns)
+│   ├── hotel_bookings.csv              
+│   ├── hotel_bookings.db               
+│   └── hotel_bookings_clean.csv       
 │
 ├── notebooks/
-│   ├── 01_database_setup.ipynb         # SQLite schema and data normalization
-│   ├── 02_etl_cleaning.ipynb           # ETL pipeline and feature engineering
-│   ├── 03_eda_statistics.ipynb         # Exploratory data analysis
-│   ├── 04_business_analysis.ipynb      # Business intelligence and insights
-│   └── 05_machine_learning.ipynb       # Model training, evaluation, deployment
+│   ├── 01_database_setup.ipynb         
+│   ├── 02_etl_cleaning.ipynb           
+│   ├── 03_eda_statistics.ipynb         
+│   ├── 04_business_analysis.ipynb      
+│   └── 05_machine_learning.ipynb      
 │
 ├── sql/
-│   ├── queries.sql                     # 10 business SQL queries with context
-│   └── results/                        # Query output screenshots
+│   ├── queries.sql                     
+│   └── results/                        
 │
 ├── models/
-│   ├── xgb_model.pkl                   # Trained XGBoost classifier
-│   ├── cat_mappings.pkl                # Categorical label encodings
-│   └── feature_columns.pkl             # Ordered feature list for inference
+│   ├── xgb_model.pkl                   
+│   ├── cat_mappings.pkl               
+│   └── feature_columns.pkl             
 │
 ├── dashboard/
-│   └── Hotel_booking.pbix              # Power BI Desktop file (6 pages)
+│   └── Hotel_booking.pbix             
 │
-├── app.py                              # Streamlit web application
-├── requirements.txt                    # Python dependencies
+├── app.py                              
+├── requirements.txt                    
 └── .gitignore
 ```
 
@@ -122,7 +123,7 @@ Hotel_Booking/
 | Language | Python 3.9+ |
 | Database | SQLite3 |
 | Data Processing | Pandas, NumPy |
-| Machine Learning | XGBoost, LightGBM, Scikit-learn |
+| Machine Learning | XGBoost, LightGBM, Random Forest, LogisticRegression |
 | Model Persistence | Joblib |
 | Web Application | Streamlit |
 | Business Intelligence | Power BI Desktop |
@@ -157,36 +158,36 @@ reservations (booking_id FK → bookings)
 
 ### 10 Business Questions Answered with SQL
 
-| # | Business Question | Key Result |
+|  | Business Question | Key Result |
 |---|-------------------|------------|
 | Q1 | Which hotel type has the higher cancellation rate? | City Hotel 41.73% vs Resort Hotel 27.76% |
 | Q2 | How has ADR changed year over year by hotel type? | City Hotel grew 37% ($85.86→$117.50). Resort spiked in 2017 |
 | Q3 | Which market segment loses the most cancellation revenue? | Online TA $10.2M lost. Groups worst rate at 61.06% |
-| Q4 | Top countries by bookings — cancellation rate and ADR? | Portugal 56.64% cancellation at $92 ADR — worst quality market |
-| Q5 | Which deposit type has the highest cancellation rate? | Non Refund 99.36% — revenue retained despite cancellation flag |
+| Q4 | Top countries by bookings, cancellation rate and ADR? | Portugal 56.64% cancellation at $92 ADR — worst quality market |
+| Q5 | Which deposit type has the highest cancellation rate? | Non Refund 99.36% revenue retained despite cancellation flag |
 | Q6 | Monthly booking trends across 2015–2017? | August 2017 peak ADR $164.25. Peak months 40–45% cancellation |
 | Q7 | Does lead time affect cancellation rate? | Linear: same-day 6.78% → 180+ days 57.01% |
 | Q8 | Do repeat guests behave differently from new guests? | Repeat guests 14.49% cancellation vs new guests 37.79% |
 | Q9 | Does room mismatch affect cancellation? | Room-changed guests cancel at only 5.38% vs 41.56% for matched |
-| Q10 | Do high-value bookings cancel more? | Uniform 34–38% across all tiers. Q4 loss $796 vs Q1 $97 — 8x impact |
+| Q10 | Do high-value bookings cancel more? | Uniform 34–38% across all tiers. Q4 loss $796 vs Q1 $97 which is 8x impact |
 
 ---
 
 ## Key Findings
 
-All findings are derived from SQL analysis and business intelligence notebooks, then validated through Power BI visualization. Organized by theme.
+All findings are derived from SQL analysis and business intelligence notebooks, then validated through Power BI visualization. 
 
 ---
 
-### Cancellation Is a Structural Problem, Not a Seasonal One
+### Cancellation is a structural problem, not a seasonal one
 
-The 37% overall cancellation rate remains flat across all 12 months with no meaningful seasonal variation. City Hotel exceeds 37% every single month without exception. This eliminates seasonality as an explanation and confirms a structural problem driven by booking policy, deposit requirements, and channel mix — requiring permanent intervention rather than seasonal adjustments.
+The 37% overall cancellation rate remains flat across all 12 months with no meaningful seasonal variation. City Hotel exceeds 37% every single month without exception. This eliminates seasonality as an explanation and confirms a structural problem driven by booking policy, deposit requirements, and channel mix requiring permanent intervention rather than seasonal adjustments.
 
 SQL confirmed the 14-point gap between City Hotel (41.73%) and Resort Hotel (27.76%), driven by fundamentally different guest profiles. City hotels attract volatile business travelers who book multiple options simultaneously. Resort bookings represent committed leisure trips with longer planning horizons and higher emotional investment.
 
 ---
 
-### Lead Time Is the Strongest and Most Actionable Cancellation Driver
+### Lead Time is the strongest and most actionable cancellation driver
 
 A near-perfect linear relationship exists between advance booking window and cancellation probability:
 
@@ -199,33 +200,33 @@ A near-perfect linear relationship exists between advance booking window and can
 | 91–180 days | 26,439 | 44.71% |
 | 180+ days | 24,692 | 57.01% |
 
-Guests who book 180+ days in advance cancel at 57% — more than 8x the rate of same-day bookers. Longer time horizons give guests more opportunity for plans to change. This became the single most important feature in the XGBoost model and directly informs the tiered deposit policy recommendation.
+Guests who book 180+ days in advance cancel at 57%  more than 8x the rate of same-day bookers. Longer time horizons give guests more opportunity for plans to change. This became the single most important feature in the XGBoost model and directly informs the tiered deposit policy recommendation.
 
 ---
 
-### Special Requests Are the Strongest Commitment Signal
+### Special requests are the strongest commitment signal
 
-Guests with zero special requests cancel at 47.7%. Guests who make 3 or more requests cancel at only 16.8% — a 31-point gap. Guests who communicate specific preferences are emotionally invested in the stay and rarely cancel. This is both one of the top ML predictive features and a highly actionable operational lever: proactively soliciting guest preferences at booking converts passive reservations into committed stays.
-
----
-
-### The Non-Refundable Deposit Paradox
-
-Non-refundable deposit bookings show a 99.36% cancellation rate — the most counterintuitive finding in the dataset. The explanation: hotels record these as cancelled even when the deposit is retained, meaning revenue is fully protected regardless of the cancellation flag. The true behavioural cancellation risk lies in No Deposit bookings at 28.38%, representing 104,641 bookings. Expanding non-refundable rate options for high-risk segments protects revenue without reducing booking volume.
+Guests with zero special requests cancel at 47.7%. Guests who make 3 or more requests cancel at only 16.8% , a 31-point gap. Guests who communicate specific preferences are emotionally invested in the stay and rarely cancel. This is both one of the top ML predictive features and a highly actionable operational lever: proactively soliciting guest preferences at booking converts passive reservations into committed stays.
 
 ---
 
-### Resort Hotel Is a Summer-Dependent Business
+### The Non-Refundable deposit paradox
 
-Resort Hotel ADR reaches $186 in Summer versus $57 in Winter — a 170% seasonal swing that creates serious cash flow vulnerability. City Hotel maintains stable ADR of $85–$118 year-round, driven by consistent business travel demand.
-
-By 2017, City Hotel commands a $9 ADR premium over Resort Hotel ($117.50 vs $108.66) — unusual since resorts typically charge more. This reflects stronger urban demand growth and City Hotel's consistent pricing power.
-
-Despite lower ADR, Resort Hotel generates higher revenue per completed booking ($400.90 vs $311.40) because longer average stays (4.3 vs 3.0 nights) outweigh the rate disadvantage. However, this advantage disappears entirely if summer demand softens. Summer alone generates 45% of annual revenue — a dangerous concentration in a single season.
+Non-refundable deposit bookings show a 99.36% cancellation rate, the most counterintuitive finding in the dataset. The explanation: hotels record these as cancelled even when the deposit is retained, meaning revenue is fully protected regardless of the cancellation flag. The true behavioural cancellation risk lies in No Deposit bookings at 28.38%, representing 104,641 bookings. Expanding non-refundable rate options for high-risk segments protects revenue without reducing booking volume.
 
 ---
 
-### Online TA Is the Largest Revenue Source and the Largest Single Risk
+### Resort Hotel is a Summer-Dependent business
+
+Resort Hotel ADR reaches $186 in Summer versus $57 in Winter, a 170% seasonal swing that creates serious cash flow vulnerability. City Hotel maintains stable ADR of $85–$118 year-round, driven by consistent business travel demand.
+
+By 2017, City Hotel commands a $9 ADR premium over Resort Hotel ($117.50 vs $108.66), unusual since resorts typically charge more. This reflects stronger urban demand growth and City Hotel's consistent pricing power.
+
+Despite lower ADR, Resort Hotel generates higher revenue per completed booking ($400.90 vs $311.40) because longer average stays (4.3 vs 3.0 nights) outweigh the rate disadvantage. However, this advantage disappears entirely if summer demand softens. Summer alone generates 45% of annual revenue, a dangerous concentration in a single season.
+
+---
+
+### Online TA is the largest revenue source and the largest single risk
 
 | Market Segment | Bookings | Cancellation Rate | ADR | Revenue Lost |
 |---------------|---------|-------------------|-----|-------------|
@@ -235,13 +236,13 @@ Despite lower ADR, Resort Hotel generates higher revenue per completed booking (
 | Direct | 12,606 | 15.34% | $115.45 | $993,410 |
 | Corporate | 5,295 | 18.73% | $69.36 | $196,383 |
 
-Online TA accounts for 61% of all cancellation revenue loss ($10.2M of $16.9M total). Direct bookings match Online TA ADR ($114 vs $114) with half the cancellation rate (15.3% vs 36.7%) and zero OTA commission — making direct booking conversion the single highest-ROI channel strategy available.
+Online TA accounts for 61% of all cancellation revenue loss ($10.2M of $16.9M total). Direct bookings match Online TA ADR ($114 vs $114) with half the cancellation rate (15.3% vs 36.7%) and zero OTA commission, making direct booking conversion the single highest-ROI channel strategy available.
 
 Groups represent the worst risk-return profile in the entire dataset: lowest ADR ($79) combined with the highest cancellation rate (61.06%). Six in ten group bookings cancel.
 
 ---
 
-### Portugal Concentration Is a Hidden Revenue Quality Risk
+### Portugal concentration is a hidden revenue quality risk
 
 Portugal accounts for 41% of all bookings (48,590) but delivers the worst quality metrics of any major market: the lowest ADR among top countries ($92.04) and the highest cancellation rate (56.64%). Over half of all Portuguese bookings cancel.
 
@@ -259,7 +260,7 @@ International guests consistently cancel at lower rates than domestic Portuguese
 
 ---
 
-### Booking Value Does Not Predict Cancellation — But the Financial Stakes Do
+### Booking value does not predict cancellation but the financial stakes do
 
 Cancellation rates are remarkably uniform across all four booking value quartiles (34.70%–38.46%). Price tier alone does not predict cancellation likelihood. However the financial impact when high-value bookings cancel is dramatically different:
 
@@ -274,15 +275,15 @@ Q4 cancellations cost 8x more than Q1 cancellations. Deposit policies should the
 
 ---
 
-### Repeat Guests Are Significantly More Reliable
+### Repeat guests are significantly more reliable
 
-Repeat guests cancel at only 14.49% versus 37.79% for new guests — less than half the rate. However repeat guest ADR is substantially lower ($64.45 vs $103.06), suggesting these are loyalty-driven price-sensitive guests rather than premium bookers. The value of repeat guests comes from their reliability and zero acquisition cost, not from rate premium. Loyalty programs should focus on converting reliable mid-tier guests rather than discounting premium segments.
+Repeat guests cancel at only 14.49% versus 37.79% for new guests, less than half the rate. However repeat guest ADR is substantially lower ($64.45 vs $103.06), suggesting these are loyalty-driven price-sensitive guests rather than premium bookers. The value of repeat guests comes from their reliability and zero acquisition cost, not from rate premium. Loyalty programs should focus on converting reliable mid-tier guests rather than discounting premium segments.
 
 ---
 
-### Room Changes Do Not Cause Cancellations
+### room changes do Not cause cancellations
 
-Guests who received a different room than reserved cancel at only 5.38% versus 41.56% for guests who received their requested room — a counterintuitive finding explained by timing. Room changes are discovered at check-in after arrival, when cancellation is no longer practical. The lower ADR for changed rooms ($83.36 vs $104.47) indicates most changes are downgrades from premium to standard rooms — a guest satisfaction issue that is separate from cancellation risk.
+Guests who received a different room than reserved cancel at only 5.38% versus 41.56% for guests who received their requested room, a counterintuitive finding explained by timing. Room changes are discovered at check-in after arrival, when cancellation is no longer practical. The lower ADR for changed rooms ($83.36 vs $104.47) indicates most changes are downgrades from premium to standard rooms, a guest satisfaction issue that is separate from cancellation risk.
 
 ---
 
@@ -299,18 +300,18 @@ Predict cancellation probability for each booking at the moment of reservation, 
 | Logistic Regression | ~78% | Interpretable baseline — underpowered for this problem |
 | Random Forest | ~91% | Strong performance but slower inference |
 | LightGBM | ~94% | Fast and accurate |
-| **XGBoost** | **95.29%** | **Best overall — selected for production deployment** |
+| **XGBoost** | **95.29%** | **Best overall and selected for production deployment** |
 
 ### Top Predictive Features
 
-1. **Lead time** — strongest single predictor; linear relationship confirmed by SQL Q7
-2. **Deposit type** — Non Refund bookings flagged as near-certain cancellation
-3. **Country of origin** — Portugal significantly elevates risk
-4. **Market segment** — Groups and Online TA increase risk; Direct reduces it
-5. **Total special requests** — inversely correlated with cancellation
-6. **Previous cancellations** — prior behaviour is highly predictive of future behaviour
-7. **Required car parking spaces** — guests who need parking rarely cancel
-8. **Total nights of stay** — longer stays correlate with lower cancellation probability
+1. **Lead time** : strongest single predictor; linear relationship confirmed by SQL Q7
+2. **Deposit type** : Non Refund bookings flagged as near-certain cancellation
+3. **Country of origin** : Portugal significantly elevates risk
+4. **Market segment** : Groups and Online TA increase risk; Direct reduces it
+5. **Total special requests** : inversely correlated with cancellation
+6. **Previous cancellations** : prior behaviour is highly predictive of future behaviour
+7. **Required car parking spaces** : guests who need parking rarely cancel
+8. **Total nights of stay** : longer stays correlate with lower cancellation probability
 
 ### Model Artifacts
 
@@ -354,45 +355,51 @@ Repeat Guest Rate  = DIVIDE(CALCULATE(COUNTROWS(hotel_bookings_clean),
 
 ### Dashboard Pages
 
-**Page 1 — Executive Summary**
+**Page 1 : Executive Summary**
 Five KPI cards, monthly revenue trend by year, cancellation rate by hotel type, and seasonal booking distribution. Designed for a 30-second leadership briefing showing the full scope of the $16.9M revenue leakage problem.
 
-![Executive Summary](screenshots/01_executive_summary.png)
+<img width="1311" height="737" alt="Executive Summary" src="https://github.com/user-attachments/assets/604caf71-c529-4cce-b7c1-aa2f851cfc9a" />
+
 
 ---
 
-**Page 2 — Booking Timeline**
+**Page 2 : Booking Timeline**
 Monthly booking volume by year, seasonal patterns with color-coded bars by season, lead time bucket distribution, and the cancellation rate by lead time curve showing the linear 6.78% to 57.01% progression.
 
-![Booking Timeline](screenshots/02_booking_timeline.png)
+<img width="1316" height="741" alt="Booking Timeline" src="https://github.com/user-attachments/assets/32c90078-1763-477a-9919-d99f44e891bc" />
+
 
 ---
 
-**Page 3 — Hotel and Segment Performance**
-Side-by-side City vs Resort comparison on Revenue, ADR, and Cancellation Rate. Monthly ADR line chart revealing Resort Hotel's dramatic summer spike and winter collapse — the two lines cross in June and September creating a distinctive X pattern. Revenue and cancellation rate by market segment.
+**Page 3 : Hotel and Segment Performance**
+Side-by-side City vs Resort comparison on Revenue, ADR, and Cancellation Rate. Monthly ADR line chart revealing Resort Hotel's dramatic summer spike and winter collapse, the two lines cross in June and September creating a distinctive X pattern. Revenue and cancellation rate by market segment.
 
-![Hotel and Segment Performance](screenshots/03_hotel_segment.png)
+<img width="1312" height="735" alt="Hotel   Segment Performance" src="https://github.com/user-attachments/assets/9a10af1c-10a1-4df1-9763-625cf167e864" />
+
 
 ---
 
-**Page 4 — Cancellation Deep Dive**
+**Page 4 : Cancellation Deep Dive**
 Cancellation rate by deposit type (Non Refund 99.4%), lead time curve, special requests gradient showing the 47.7% to 5.0% decline, and a stacked green/red bar chart showing completed vs cancelled bookings across all 12 months.
 
-![Cancellation Deep Dive](screenshots/04_cancellation_deep_dive.png)
+<img width="1320" height="739" alt="Cancellation Deep Dive" src="https://github.com/user-attachments/assets/a0affb2c-c159-4212-ae1f-6aa523e9ce62" />
+
 
 ---
 
-**Page 5 — Revenue and Pricing**
+**Page 5 : Revenue and Pricing**
 ADR by season and hotel type revealing Resort Hotel's summer-only pricing premium. Monthly ADR comparison line chart. Revenue heatmap matrix by month and year with August consistently the darkest cell. Revenue breakdown by market segment.
 
-![Revenue and Pricing](screenshots/05_revenue_pricing.png)
+<img width="1312" height="737" alt="Revenue   Pricing" src="https://github.com/user-attachments/assets/6baeeb88-76e3-44dd-abdb-61e3c7447eb6" />
+
 
 ---
 
-**Page 6 — Geographic Analysis**
+**Page 6 : Geographic Analysis**
 World map with booking volume bubbles (Portugal cluster dominates Europe), top 15 countries by bookings, top 10 countries by revenue, and a country-level KPI table with bookings, cancellation rate, ADR, and total revenue for all major markets.
 
-![Geographic Analysis](screenshots/06_geographic_analysis.png)
+<img width="1314" height="738" alt="Geographic Analysis" src="https://github.com/user-attachments/assets/008e8d6b-f925-4cd1-b301-de91ec3c1f44" />
+
 
 ---
 
@@ -400,11 +407,11 @@ World map with booking volume bubbles (Portugal cluster dominates Europe), top 1
 
 Ordered by estimated revenue impact, derived directly from quantitative analysis.
 
-**Priority 1 — Direct Booking Conversion**
+**Priority 1 : Direct Booking Conversion**
 
-Direct bookings match Online TA ADR ($114 vs $114) with half the cancellation rate (15.3% vs 36.7%) and zero OTA commission. Shifting 10,000 bookings from OTA to Direct generates approximately $1.5M in saved commission annually — before accounting for the cancellation reduction benefit. Invest in direct booking incentives, best-rate guarantees, and loyalty program enrollment at checkout.
+Direct bookings match Online TA ADR ($114 vs $114) with half the cancellation rate (15.3% vs 36.7%) and zero OTA commission. Shifting 10,000 bookings from OTA to Direct generates approximately $1.5M in saved commission annually, before accounting for the cancellation reduction benefit. Invest in direct booking incentives, best-rate guarantees, and loyalty program enrollment at checkout.
 
-**Priority 2 — Tiered Lead Time Deposit Policy**
+**Priority 2 : Tiered Lead Time Deposit Policy**
 
 Implement deposit requirements scaled to cancellation risk by booking window:
 - 0–30 days advance: no deposit required (6.78%–27.86% risk)
@@ -413,15 +420,15 @@ Implement deposit requirements scaled to cancellation risk by booking window:
 
 This directly addresses the strongest predictor in the ML model without deterring low-risk short-horizon bookings that are unlikely to cancel anyway.
 
-**Priority 3 — Special Request Engagement at Booking**
+**Priority 3 : Special Request Engagement at Booking**
 
-Guests with zero special requests cancel at 47.7%. A targeted follow-up sequence asking guests about room preferences, dietary requirements, and transportation — sent within 24 hours of booking — converts passive reservations into committed stays. Low cost, high impact, and immediately deployable.
+Guests with zero special requests cancel at 47.7%. A targeted follow-up sequence asking guests about room preferences, dietary requirements, and transportation, sent within 24 hours of booking  converts passive reservations into committed stays. Low cost, high impact, and immediately deployable.
 
-**Priority 4 — International Market Diversification**
+**Priority 4 : International Market Diversification**
 
-Reducing Portugal dependency from 41% to 35% by investing in targeted marketing toward Germany (16.71% cancellation, $104 ADR), France (18.57%, $110), USA (23.9%, $119), and Switzerland (24.7%, $117) would improve revenue quality across both metrics simultaneously. These markets combine premium rates with reliable behaviour — the ideal guest profile that currently represents less than 20% of total bookings.
+Reducing Portugal dependency from 41% to 35% by investing in targeted marketing toward Germany (16.71% cancellation, $104 ADR), France (18.57%, $110), USA (23.9%, $119), and Switzerland (24.7%, $117) would improve revenue quality across both metrics simultaneously. These markets combine premium rates with reliable behaviour, the ideal guest profile that currently represents less than 20% of total bookings.
 
-**Priority 5 — Resort Hotel Off-Season Revenue Strategy**
+**Priority 5 : Resort Hotel Off-Season Revenue Strategy**
 
 Resort Hotel Winter ADR of $57 versus Summer $186 creates a 170% seasonal swing and a dangerous cash flow vulnerability. Develop conference packages, wellness retreats, and shoulder-season promotions targeting the corporate segment to raise Winter ADR toward $80+. The goal is not to match summer revenue, but to reduce the risk of a business that currently generates 45% of its annual revenue in a single season.
 
@@ -455,7 +462,7 @@ Or access the live deployment: [hotel-booking-cancellation-risk-predictor.stream
 
 ### Open the Power BI Dashboard
 
-Open `dashboard/Hotel_booking.pbix` in Power BI Desktop. All data is embedded — no additional configuration required.
+Open `dashboard/Hotel_booking.pbix` in Power BI Desktop. All data is embedded and no additional configuration required.
 
 ### Run the Analysis Notebooks
 
@@ -476,11 +483,7 @@ Available publicly on [Kaggle](https://www.kaggle.com/datasets/jessemostipak/hot
 ## Author
 
 **Sadeq Soltani**
-
-📍 Vaughan, Ontario, Canada
-🐙 GitHub: [github.com/SadeqSoltani](https://github.com/SadeqSoltani)
-🚀 Live App: [hotel-booking-cancellation-risk-predictor.streamlit.app](https://hotel-booking-cancellation-risk-predictor.streamlit.app)
-
+📍 Ontario, Canada
 ---
 
 *Built as a comprehensive portfolio project demonstrating end-to-end data analytics capability across SQL, Python, machine learning, and business intelligence.*
